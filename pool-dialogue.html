@@ -2,97 +2,101 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <!-- 适配手机端，避免字太小 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>父子在泳池边的对话</title>
+    <title>泳池边的对话：谁是大人，谁是孩子？</title>
     <style>
         * { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft YaHei", sans-serif;
             margin: 0;
-            padding: 20px 15px; /* 手机端默认边距 */
-            background-color: #f9fafb; /* 极简的浅灰背景 */
+            padding: 20px 15px; /* 移动端边距 */
+            background-color: #f5f6f8; /* 雅致灰色背景 */
             color: #333333;
             font-size: 16px;
             line-height: 1.8;
-            letter-spacing: 0.5px;
         }
         .container {
             background-color: #ffffff;
-            padding: 35px 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
-            max-width: 760px; /* 限制最大宽度，阅读体验最佳 */
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
             margin: 0 auto;
         }
         /* 针对电脑大屏幕加宽内边距 */
         @media (min-width: 768px) {
-            .container { padding: 50px 60px; }
+            .container { padding: 50px; }
             body { padding: 40px 20px; }
         }
         .title {
-            font-size: 22px;
-            line-height: 1.5;
+            font-size: 24px;
+            line-height: 1.4;
             color: #1a1a1a;
             margin-top: 0;
-            margin-bottom: 15px;
-            font-weight: 500;
+            margin-bottom: 12px;
+            font-weight: bold;
         }
         .meta {
             font-size: 14px;
             color: #999999;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 1px solid #f0f0f0;
         }
-        .meta span.author { color: #607d8b; margin-right: 10px; }
-        p { margin-bottom: 22px; text-align: justify; }
-        
-        /* 优雅的对话块样式 */
-        .dialogue-box {
+        .meta span.author { 
+            color: #576b95; 
+            margin-right: 10px; 
+            font-weight: 500;
+        }
+        p { margin-bottom: 20px; text-align: justify; }
+
+        /* 带微信绿边框的精美对话框 */
+        .dialogue-card {
             margin: 30px 0;
-            padding: 20px 25px;
-            background-color: #f8f9fa;
-            border-left: 3px solid #b0bec5; /* 沉稳的灰蓝色边框 */
-            border-radius: 0 6px 6px 0;
-            color: #444444;
+            padding: 22px 24px;
+            background-color: #f6faf7; /* 极浅的淡绿柔和背景 */
+            border-left: 4px solid #07c160; /* 鲜艳的微信绿主色调 */
+            border-radius: 0 8px 8px 0;
         }
-        .dialogue-box p {
-            margin-bottom: 15px;
+        .dialogue-line {
+            margin-bottom: 16px;
+            line-height: 1.7;
         }
-        .dialogue-box p:last-child {
+        .dialogue-line:last-child {
             margin-bottom: 0;
         }
-        .name {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-right: 5px;
+        .speaker {
+            font-weight: bold;
+            color: #1a1a1a;
         }
-        .action-text {
+        .action {
             color: #888888;
-            font-size: 15px;
+        }
+        .narrative {
+            color: #888888;
+            margin: 18px 0;
         }
         .divider {
             text-align: center;
-            margin: 40px 0;
-            color: #dddddd;
-            font-weight: 300;
-            letter-spacing: 4px;
+            margin: 35px 0;
+            color: #07c160;
+            letter-spacing: 6px;
+            font-size: 14px;
+            opacity: 0.6;
         }
-        /* 结尾升华句卡片 */
-        .conclusion-card {
-            margin-top: 40px;
-            padding: 25px;
-            background-color: #ffffff;
-            border: 1px solid #eeeeee;
-            border-radius: 8px;
+        /* 结尾绿底高亮金句卡片 */
+        .golden-quote {
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-        .conclusion-card p {
-            margin-bottom: 0;
-            color: #455a64;
-            font-size: 17px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: bold;
+            color: #07c160;
+            margin: 35px 0 10px 0;
+            line-height: 1.6;
+            padding: 22px;
+            background-color: rgba(7, 193, 96, 0.06);
+            border: 1px solid rgba(7, 193, 96, 0.18);
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -100,28 +104,23 @@
     <div class="container">
         <h1 class="title">泳池边的对话：谁是大人，谁是孩子？</h1>
         <div class="meta">
-            <span class="author">原创随笔</span> 
+            <span class="author">原创随笔</span>
             <span>2026-08-19</span>
         </div>
 
         <p>晚上和江南去游泳。中场休息时，我坐在泳池边，他身子泡在水里，双手趴在岸边，我俩聊了起来。</p>
-        
-        <div class="dialogue-box">
-            <p><span class="name">江南：</span>“鼻子呛水了，这池子里的氯水味有点重。”</p>
+
+        <div class="dialogue-card">
+            <div class="dialogue-line"><span class="speaker">江南：</span>“鼻子呛水了，这池子里的氯水味有点重。”</div>
+            <div class="dialogue-line"><span class="speaker">我：</span>“还好吧，我没闻出来。这游泳池每两个星期换一次水，每次换水群里都会发消息提醒。”</div>
+            <div class="dialogue-line"><span class="speaker">江南：</span>“换一整池水的成本很高，平时一般就是往里面加氯水，等杂质沉淀到池底，再用专门的工具吸附清除掉。”</div>
+            <div class="dialogue-line"><span class="speaker">我</span> <span class="action">（一脸惊讶）</span><span class="speaker">：</span>“不会吧？”</div>
+            <div class="dialogue-line"><span class="speaker">江南：</span>“这很正常，一般一池子水要完全换掉，估计得用到它关门倒闭。”</div>
             
-            <p><span class="name">我：</span>“还好吧，我没闻出来。这游泳池每两个星期换一次水，每次换水群里都会发消息提醒。”</p>
+            <div class="narrative">他说完便往水下潜去，闭了一口气。</div>
             
-            <p><span class="name">江南：</span>“换一整池水的成本很高，平时一般就是往里面加氯水，等杂质沉淀到池底，再用专门的工具吸附清除掉。”</p>
-            
-            <p><span class="name">我</span><span class="action-text">（一脸惊讶）</span><span class="name">：</span>“不会吧？”</p>
-            
-            <p><span class="name">江南：</span>“这很正常，一般一池子水要完全换掉，估计得用到它关门倒闭。”</p>
-            
-            <p><span class="action-text">他说完便往水下潜去，闭了一口气。</span></p>
-            
-            <p><span class="name">我</span><span class="action-text">（半开玩笑地说）</span><span class="name">：</span>“那我不游了。”</p>
-            
-            <p><span class="name">江南</span><span class="action-text">（冒出水面）</span><span class="name">：</span>“别呀，也许这一家不一样吧。”</p>
+            <div class="dialogue-line"><span class="speaker">我</span> <span class="action">（半开玩笑地说）</span><span class="speaker">：</span>“那我不游了。”</div>
+            <div class="dialogue-line"><span class="speaker">江南</span> <span class="action">（冒出水面）</span><span class="speaker">：</span>“别呀，也许这一家不一样吧。”</div>
         </div>
 
         <p>我们俩相视一笑。</p>
@@ -129,13 +128,12 @@
         <div class="divider">✦ ✦ ✦</div>
 
         <p>如果把我俩的对话角色反过来，这段对话似乎也完全成立。</p>
-        
-        <p>在这个信息获取如此便捷的时代，谁是传授经验的“大人”，谁又是懵懂的“孩子”？</p>
-        
-        <div class="conclusion-card">
-            <p>有时候，真不好说。</p>
-        </div>
 
+        <p>在这个信息获取如此便捷的时代，谁是传授经验的“大人”，谁又是懵懂的“孩子”？</p>
+
+        <div class="golden-quote">
+            有时候，真不好说。
+        </div>
     </div>
 </body>
 </html>
